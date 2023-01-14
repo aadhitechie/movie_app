@@ -6,7 +6,7 @@ import 'package:netflix_clone_app/presentation/home/widgets/custom_button_widget
 import 'package:netflix_clone_app/presentation/widgets/video_widget.dart';
 
 class ComingSoonWidget extends StatelessWidget {
-   final String id;
+  final String id;
   final String month;
   final String day;
   final String posterPath;
@@ -34,7 +34,7 @@ class ComingSoonWidget extends StatelessWidget {
             height: 450,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-              children:  [
+              children: [
                 Text(
                   month,
                   style: const TextStyle(fontSize: 16, color: kGreyColor),
@@ -51,17 +51,17 @@ class ComingSoonWidget extends StatelessWidget {
           ),
           SizedBox(
             width: size.width - 60,
-            height: 450,
+            height: 480,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                 VideoWidget(url: posterPath),
+                VideoWidget(url: posterPath),
                 kHeight10,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                     Expanded(
-                       child: Text(
+                    Expanded(
+                      child: Text(
                         movieName,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -69,41 +69,42 @@ class ComingSoonWidget extends StatelessWidget {
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
                             letterSpacing: -2),
-                                         ),
-                     ),
+                      ),
+                    ),
                     Row(
-                      children:  const [
+                      children: const [
                         CustomButtonWidget(
-                        icon: Icons.notifications_outlined,
-                        title: "Remind me",
-                        iconSize: 20,
-                        textSize: 10,
-                      ),
-                      kWidth10,
-                      CustomButtonWidget(
-                        icon: Icons.info_outlined,
-                        title: "Info",
-                        iconSize: 20,
-                        textSize: 10,
-                      ),
+                          icon: Icons.notifications_outlined,
+                          title: "Remind me",
+                          iconSize: 20,
+                          textSize: 10,
+                        ),
+                        kWidth10,
+                        CustomButtonWidget(
+                          icon: Icons.info_outlined,
+                          title: "Info",
+                          iconSize: 20,
+                          textSize: 10,
+                        ),
                         kWidth10,
                       ],
                     )
                   ],
                 ),
-                 Text('Coming $day $month'),
+                Text('Coming $day $month'),
                 kHeight10,
-                 Text(
+                Text(
                   movieName,
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 kHeight10,
-                 Text(
+                Text(
                   description,
                   maxLines: 8,
                   overflow: TextOverflow.ellipsis,
-                  style:
-                      const TextStyle(fontWeight: FontWeight.bold, color: kGreyColor),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, color: kGreyColor),
                 ),
               ],
             ),
